@@ -10,9 +10,18 @@ type cartType = {
   valueUnit:number,
   total:number
 }
+type PropsStatusCartType = {
+  statusCart: boolean,
+  setStatusCart: React.Dispatch<React.SetStateAction<boolean>>
+}
 type PropsContextCart = {
     cart:cartType,
     setCart: React.Dispatch<React.SetStateAction<cartType>>
+}
+const DEFAULT_VALUE_STATUS_CART = {
+  statusCart: false,
+  setStatusCart:()=>{}
+
 }
 
 const DEFAULT_VALUE_CART = {
@@ -26,18 +35,19 @@ const DEFAULT_VALUE_CART = {
 }
 
 export const CartContext = createContext<PropsContextCart>(DEFAULT_VALUE_CART)
-
+export const StatusCartContext = createContext<PropsStatusCartType>(DEFAULT_VALUE_STATUS_CART)
 
 
 function App() {
 
 
   const [cart, setCart] = useState(DEFAULT_VALUE_CART.cart)
-  
+  const [statusCart, setStatusCart] = useState(false)
 
   return (
     <>
     <CartContext.Provider value={{cart, setCart}}> 
+      <StatusCartContext.Provider value={{statusCart, setStatusCart}}>
       <BrowserRouter>
         <Header />
 
@@ -45,6 +55,7 @@ function App() {
           <Route path='/' element={<PageProduct />}/>
         </Routes>
       </BrowserRouter>
+      </StatusCartContext.Provider>
       </CartContext.Provider>
     </>
   )
