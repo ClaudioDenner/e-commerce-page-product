@@ -53,6 +53,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<PageProduct />}/>
+          <Route path='/e-commerce-page-product' element={<PageProduct />}/>
         </Routes>
       </BrowserRouter>
       </StatusCartContext.Provider>

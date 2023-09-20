@@ -6,6 +6,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { useContext} from 'react'
 import { CartContext, StatusCartContext } from '../../App'
 import Cart from '../cart/Cart'
+import imgMenuMobile from '/images/icon-menu.svg'
 
 
 
@@ -24,6 +25,7 @@ function Header() {
     <nav className={styles.nav}>
 
        <div className={styles.container}>  
+          <img src={imgMenuMobile} className={styles.buttonMenuMobile}/>
           <Link to="/">
             <img src={logo} className={styles.logo}/>
           </Link>

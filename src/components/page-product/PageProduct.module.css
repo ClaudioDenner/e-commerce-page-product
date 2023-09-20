@@ -16,6 +16,10 @@
     border-radius: 10px;
 }
 
+.caroussel{
+    display: none;
+}
+
 .container_thumbnails{
 
     margin-top: 20px;
@@ -232,6 +236,18 @@
     .button_add_cart{
         height: 40px;
         margin-left: 0px;
+        width: 100%;
+    }
+
+    .image_cover{
+        display: none;
+    }
+
+    .caroussel{
+        display: block;
+        width: 100%;
+    }
+    .caroussel img{
         width: 100%;
     }
 

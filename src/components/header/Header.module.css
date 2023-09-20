@@ -16,6 +16,11 @@
     gap: 30px;
 }
 
+.buttonMenuMobile{
+    cursor: pointer;
+    display: none;
+}
+
 .logo{
     margin-right: 50px;
 }
@@ -75,6 +80,21 @@
 }
 
 @media(max-width:768px){
+
+    .nav{
+       
+        width: 100%;
+        padding: 0px 10px 10px 10px;
+    }
+
+    .container{
+        gap: 15px;
+    }
+
+    .buttonMenuMobile{
+        display: block;
+    }
+
     .ul{
         display: none;
     }

@@ -2,14 +2,16 @@ import styles from './PageProduct.module.css'
 import { useContext, useState } from 'react'
 import { CartContext, StatusCartContext} from '../../App'
 import Image01 from '/images/image-product-1.jpg'
-//import Image02 from '/images/image-product-2.jpg'
-//import Image03 from '/images/image-product-3.jpg'
-//import Image04 from '/images/image-product-4.jpg'
+import Image02 from '/images/image-product-2.jpg'
+import Image03 from '/images/image-product-3.jpg'
+import Image04 from '/images/image-product-4.jpg'
 import Thumb01 from '/images/image-product-1-thumbnail.jpg'
 import Thumb02 from '/images/image-product-2-thumbnail.jpg'
 import Thumb03 from '/images/image-product-3-thumbnail.jpg'
 import Thumb04 from '/images/image-product-4-thumbnail.jpg'
 import iconCart from '/images/icon-cart-white.svg'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 
 
@@ -49,7 +51,29 @@ function PageProduct() {
   return (
     <div  className={styles.container}>
         <div className={styles.image_product}>
+
+          {/* imagem cover para desktop */}
+
+
           <img src={Image01} className={styles.image_cover}/>
+
+          {/* carrossel p/mobile */}
+
+          <Splide aria-label="My Favorite Images" className={styles.caroussel}>
+            <SplideSlide width="400">
+              <img src={Image01} alt="Image 1"/>
+            </SplideSlide>
+            <SplideSlide>
+              <img src={Image02} alt="Image 2"/>
+            </SplideSlide>
+            <SplideSlide>
+              <img src={Image03} alt="Image 2"/>
+            </SplideSlide>            <SplideSlide>
+              <img src={Image04} alt="Image 2"/>
+            </SplideSlide>
+          </Splide>
+
+
           <div className={styles.container_thumbnails}>
             <img src={Thumb01} className={styles.Thumb}/>
             <img src={Thumb02} className={styles.Thumb}/>
