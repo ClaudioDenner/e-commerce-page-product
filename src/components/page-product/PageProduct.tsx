@@ -10,8 +10,12 @@ import Thumb02 from '/images/image-product-2-thumbnail.jpg'
 import Thumb03 from '/images/image-product-3-thumbnail.jpg'
 import Thumb04 from '/images/image-product-4-thumbnail.jpg'
 import iconCart from '/images/icon-cart-white.svg'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 
 
 
@@ -59,20 +63,22 @@ function PageProduct() {
 
           {/* carrossel p/mobile */}
 
-          <Splide aria-label="My Favorite Images" className={styles.caroussel}>
-            <SplideSlide width="400">
-              <img src={Image01} alt="Image 1"/>
-            </SplideSlide>
-            <SplideSlide>
-              <img src={Image02} alt="Image 2"/>
-            </SplideSlide>
-            <SplideSlide>
-              <img src={Image03} alt="Image 2"/>
-            </SplideSlide>            <SplideSlide>
-              <img src={Image04} alt="Image 2"/>
-            </SplideSlide>
-          </Splide>
 
+          <Swiper
+          className={styles.caroussel}
+          pagination={true}
+          modules={[Navigation, Pagination]}
+          navigation={true}
+          spaceBetween={50}
+          slidesPerView={1}
+          
+          >
+              <SwiperSlide><img src={Image01} alt="Image 1"/></SwiperSlide>
+              <SwiperSlide><img src={Image02} alt="Image 2"/></SwiperSlide>
+              <SwiperSlide><img src={Image03} alt="Image 2"/></SwiperSlide>
+              <SwiperSlide><img src={Image04} alt="Image 2"/></SwiperSlide>
+        </Swiper>
+          
 
           <div className={styles.container_thumbnails}>
             <img src={Thumb01} className={styles.Thumb}/>
