@@ -21,6 +21,7 @@ import 'swiper/css/navigation';
 
 
 
+
 function PageProduct() {
 
   const item = {
@@ -40,7 +41,7 @@ function PageProduct() {
     //
     cart.setCart({
       item: item.name,
-      quant:quantCart,
+      quant:cart.cart.quant+quantCart,
       valueUnit:item.price,
       total:item.price*quantCart
     })
@@ -55,7 +56,6 @@ function PageProduct() {
   return (
     <div  className={styles.container}>
         <div className={styles.image_product}>
-
           {/* imagem cover para desktop */}
 
 
