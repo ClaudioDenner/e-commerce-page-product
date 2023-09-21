@@ -43,7 +43,7 @@ function PageProduct() {
       item: item.name,
       quant:cart.cart.quant+quantCart,
       valueUnit:item.price,
-      total:item.price*quantCart
+      total:(cart.cart.quant+quantCart)*item.price
     })
     setQuantCart(1)
     statusCart.setStatusCart(true)
