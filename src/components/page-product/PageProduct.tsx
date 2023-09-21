@@ -63,9 +63,8 @@ function PageProduct() {
 
           {/* carrossel p/mobile */}
 
-
+          <div className={styles.caroussel}>
           <Swiper
-          className={styles.caroussel}
           pagination={true}
           modules={[Navigation, Pagination]}
           navigation={true}
@@ -78,6 +77,7 @@ function PageProduct() {
               <SwiperSlide><img src={Image03} alt="Image 2"/></SwiperSlide>
               <SwiperSlide><img src={Image04} alt="Image 2"/></SwiperSlide>
         </Swiper>
+        </div>
           
 
           <div className={styles.container_thumbnails}>
